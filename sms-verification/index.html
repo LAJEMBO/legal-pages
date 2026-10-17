@@ -7,7 +7,7 @@
   <meta name="description" content="Live LAJEMBO SMS opt-in and one-time verification code request page for authentication and account access.">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .verification-wrap{max-width:680px;margin:0 auto}.form-grid{display:grid;grid-template-columns:150px 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.field label{font-weight:700;color:var(--navy)}.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:16px}.consent{display:flex;align-items:flex-start;gap:11px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fffaf3;margin:8px 0 16px}.consent input{margin-top:5px;transform:scale(1.15)}.consent label{font-size:14px;color:var(--ink)}.consent a{color:var(--navy)}.submit{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;padding:13px 16px;border-radius:8px;font-size:16px;font-weight:700}.submit:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:16px;padding:13px 14px;border-radius:8px;font-size:14px}.status.ok{display:block;background:#edf8f0;border:1px solid #b8dec0;color:#194d28}.status.err{display:block;background:#fff1f1;border:1px solid #e7b9b9;color:#7a1f1f}.fineprint{font-size:13px;color:var(--muted);margin-top:12px}.live-badge{display:inline-block;background:#edf8f0;color:#194d28;border:1px solid #b8dec0;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;margin-bottom:8px}@media(max-width:620px){.form-grid{grid-template-columns:1fr}}
+    .verification-wrap{max-width:680px;margin:0 auto}.form-grid{display:grid;grid-template-columns:190px 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.field label{font-weight:700;color:var(--navy)}.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:16px}.consent{display:flex;align-items:flex-start;gap:11px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fffaf3;margin:8px 0 16px}.consent input{margin-top:5px;transform:scale(1.15)}.consent label{font-size:14px;color:var(--ink)}.consent a{color:var(--navy)}.submit{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;padding:13px 16px;border-radius:8px;font-size:16px;font-weight:700}.submit:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:16px;padding:13px 14px;border-radius:8px;font-size:14px}.status.ok{display:block;background:#edf8f0;border:1px solid #b8dec0;color:#194d28}.status.err{display:block;background:#fff1f1;border:1px solid #e7b9b9;color:#7a1f1f}.fineprint{font-size:13px;color:var(--muted);margin-top:12px}.live-badge{display:inline-block;background:#edf8f0;color:#194d28;border:1px solid #b8dec0;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;margin-bottom:8px}@media(max-width:620px){.form-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -32,8 +32,41 @@
           <div class="field">
             <label for="countryCode">Country code</label>
             <select id="countryCode" name="countryCode" required>
-              <option value="+234">Nigeria (+234)</option>
+              <option value="+234" selected>Nigeria (+234)</option>
               <option value="+1">United States (+1)</option>
+              <option value="+1">Canada (+1)</option>
+              <option value="+44">United Kingdom (+44)</option>
+              <option value="+233">Ghana (+233)</option>
+              <option value="+27">South Africa (+27)</option>
+              <option value="+254">Kenya (+254)</option>
+              <option value="+256">Uganda (+256)</option>
+              <option value="+255">Tanzania (+255)</option>
+              <option value="+250">Rwanda (+250)</option>
+              <option value="+971">United Arab Emirates (+971)</option>
+              <option value="+353">Ireland (+353)</option>
+              <option value="+33">France (+33)</option>
+              <option value="+49">Germany (+49)</option>
+              <option value="+39">Italy (+39)</option>
+              <option value="+34">Spain (+34)</option>
+              <option value="+31">Netherlands (+31)</option>
+              <option value="+32">Belgium (+32)</option>
+              <option value="+41">Switzerland (+41)</option>
+              <option value="+46">Sweden (+46)</option>
+              <option value="+47">Norway (+47)</option>
+              <option value="+45">Denmark (+45)</option>
+              <option value="+358">Finland (+358)</option>
+              <option value="+351">Portugal (+351)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+64">New Zealand (+64)</option>
+              <option value="+91">India (+91)</option>
+              <option value="+92">Pakistan (+92)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+65">Singapore (+65)</option>
+              <option value="+60">Malaysia (+60)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+82">South Korea (+82)</option>
+              <option value="+974">Qatar (+974)</option>
+              <option value="+966">Saudi Arabia (+966)</option>
             </select>
           </div>
           <div class="field">
