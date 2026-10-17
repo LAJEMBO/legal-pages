@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAJEMBO SMS Verification</title>
+  <meta name="description" content="Live LAJEMBO SMS opt-in and one-time verification code request page for authentication and account access.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .verification-wrap{max-width:680px;margin:0 auto}.form-grid{display:grid;grid-template-columns:150px 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.field label{font-weight:700;color:var(--navy)}.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:16px}.consent{display:flex;align-items:flex-start;gap:11px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fffaf3;margin:8px 0 16px}.consent input{margin-top:5px;transform:scale(1.15)}.consent label{font-size:14px;color:var(--ink)}.consent a{color:var(--navy)}.submit{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;padding:13px 16px;border-radius:8px;font-size:16px;font-weight:700}.submit:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:16px;padding:13px 14px;border-radius:8px;font-size:14px}.status.ok{display:block;background:#edf8f0;border:1px solid #b8dec0;color:#194d28}.status.err{display:block;background:#fff1f1;border:1px solid #e7b9b9;color:#7a1f1f}.fineprint{font-size:13px;color:var(--muted);margin-top:12px}.live-badge{display:inline-block;background:#edf8f0;color:#194d28;border:1px solid #b8dec0;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;margin-bottom:8px}@media(max-width:620px){.form-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand-logo-link" href="../" aria-label="LAJEMBO Legal Home"><img class="brand-logo" src="../4BFE8BF3-05BF-4979-A7D0-70F38C8C902B.PNG" alt="LAJEMBO — Find Home With Confidence"></a>
+    <nav class="nav"><a href="../privacy-policy/">Privacy Policy</a><a href="../terms-and-conditions/">Terms & Conditions</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero verification-wrap">
+    <div class="eyebrow">Secure Membership</div>
+    <span class="live-badge">Live SMS verification</span>
+    <h1>Verify your number</h1>
+    <p>Enter your mobile number and request a one-time six-digit verification code for LAJEMBO registration, login, identity verification, or account access.</p>
+  </section>
+  <section class="content verification-wrap">
+    <div class="card">
+      <h2>Request your verification code</h2>
+      <form id="otpForm" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="countryCode">Country code</label>
+            <select id="countryCode" name="countryCode" required>
+              <option value="+234">Nigeria (+234)</option>
+              <option value="+1">United States (+1)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Enter mobile number" required aria-describedby="phoneHelp">
+          </div>
+        </div>
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree to receive one-time authentication codes from LAJEMBO by SMS. Message and data rates may apply. This consent is for authentication and account access only and is not consent to marketing or promotional messages. See our <a href="../privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="../terms-and-conditions/" target="_blank" rel="noopener">Terms & Conditions</a>.</label>
+        </div>
+        <button id="sendButton" class="submit" type="submit" disabled>Send six-digit code</button>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <p id="phoneHelp" class="fineprint">Codes expire in 10 minutes. Requests are rate-limited for your protection. LAJEMBO does not use this campaign for marketing or promotional messaging.</p>
+      </form>
+    </div>
+    <div class="card notice">
+      <h2>How consent works</h2>
+      <p>The user enters their own mobile number, actively checks the SMS consent box, and then presses “Send six-digit code.” LAJEMBO sends the one-time passcode only after this user-initiated request.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="footer-inner"><div>© 2026 LAJEMBO. All rights reserved.</div><div><a href="../privacy-policy/">Privacy Policy</a> · <a href="../terms-and-conditions/">Terms & Conditions</a></div></div></footer>
+<script>
+(function(){
+  const SUPABASE_URL='https://wtfyzrqocnmmdgqthhli.supabase.co';
+  const SUPABASE_KEY='sb_publishable_AjHIkbKFgbcRho8qu3w96g_KL5rWIHr';
+  const form=document.getElementById('otpForm');
+  const consent=document.getElementById('consent');
+  const phone=document.getElementById('phone');
+  const countryCode=document.getElementById('countryCode');
+  const button=document.getElementById('sendButton');
+  const status=document.getElementById('status');
+  consent.addEventListener('change',()=>{button.disabled=!consent.checked;});
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    status.className='status'; status.textContent='';
+    if(!consent.checked){status.className='status err';status.textContent='Please provide SMS consent before requesting a verification code.';return;}
+    const raw=phone.value.replace(/\D/g,'');
+    if(!raw){status.className='status err';status.textContent='Enter a valid mobile number.';return;}
+    const e164=countryCode.value+raw.replace(/^0+/,'');
+    button.disabled=true; button.textContent='Sending code…';
+    try{
+      const res=await fetch(SUPABASE_URL+'/auth/v1/otp',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},
+        body:JSON.stringify({phone:e164,create_user:true})
+      });
+      if(!res.ok){
+        let message='Unable to send a verification code right now. Please try again shortly.';
+        try{const data=await res.json(); if(data && (data.msg||data.message)) message=data.msg||data.message;}catch(_){ }
+        throw new Error(message);
+      }
+      status.className='status ok';
+      status.textContent='Verification code requested successfully. Check your phone for the LAJEMBO six-digit code.';
+    }catch(err){
+      status.className='status err';
+      status.textContent=err && err.message ? err.message : 'Unable to send a verification code right now. Please try again shortly.';
+    }finally{
+      button.textContent='Send six-digit code';
+      button.disabled=!consent.checked;
+    }
+  });
+})();
+</script>
+</body>
+</html>
