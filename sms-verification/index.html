@@ -32,61 +32,21 @@
           <div class="field">
             <label for="countryCode">Country code</label>
             <select id="countryCode" name="countryCode" required>
-              <option value="+234" selected>Nigeria (+234)</option>
-              <option value="+1">United States (+1)</option>
-              <option value="+1">Canada (+1)</option>
-              <option value="+44">United Kingdom (+44)</option>
-              <option value="+233">Ghana (+233)</option>
-              <option value="+27">South Africa (+27)</option>
-              <option value="+254">Kenya (+254)</option>
-              <option value="+256">Uganda (+256)</option>
-              <option value="+255">Tanzania (+255)</option>
-              <option value="+250">Rwanda (+250)</option>
-              <option value="+971">United Arab Emirates (+971)</option>
-              <option value="+353">Ireland (+353)</option>
-              <option value="+33">France (+33)</option>
-              <option value="+49">Germany (+49)</option>
-              <option value="+39">Italy (+39)</option>
-              <option value="+34">Spain (+34)</option>
-              <option value="+31">Netherlands (+31)</option>
-              <option value="+32">Belgium (+32)</option>
-              <option value="+41">Switzerland (+41)</option>
-              <option value="+46">Sweden (+46)</option>
-              <option value="+47">Norway (+47)</option>
-              <option value="+45">Denmark (+45)</option>
-              <option value="+358">Finland (+358)</option>
-              <option value="+351">Portugal (+351)</option>
-              <option value="+61">Australia (+61)</option>
-              <option value="+64">New Zealand (+64)</option>
-              <option value="+91">India (+91)</option>
-              <option value="+92">Pakistan (+92)</option>
-              <option value="+86">China (+86)</option>
-              <option value="+65">Singapore (+65)</option>
-              <option value="+60">Malaysia (+60)</option>
-              <option value="+81">Japan (+81)</option>
-              <option value="+82">South Korea (+82)</option>
-              <option value="+974">Qatar (+974)</option>
-              <option value="+966">Saudi Arabia (+966)</option>
+              <option value="+234" selected>Nigeria (+234)</option><option value="+1">United States (+1)</option><option value="+1">Canada (+1)</option><option value="+44">United Kingdom (+44)</option><option value="+233">Ghana (+233)</option><option value="+27">South Africa (+27)</option><option value="+254">Kenya (+254)</option><option value="+256">Uganda (+256)</option><option value="+255">Tanzania (+255)</option><option value="+250">Rwanda (+250)</option><option value="+971">United Arab Emirates (+971)</option><option value="+353">Ireland (+353)</option><option value="+33">France (+33)</option><option value="+49">Germany (+49)</option><option value="+39">Italy (+39)</option><option value="+34">Spain (+34)</option><option value="+31">Netherlands (+31)</option><option value="+32">Belgium (+32)</option><option value="+41">Switzerland (+41)</option><option value="+46">Sweden (+46)</option><option value="+47">Norway (+47)</option><option value="+45">Denmark (+45)</option><option value="+358">Finland (+358)</option><option value="+351">Portugal (+351)</option><option value="+61">Australia (+61)</option><option value="+64">New Zealand (+64)</option><option value="+91">India (+91)</option><option value="+92">Pakistan (+92)</option><option value="+86">China (+86)</option><option value="+65">Singapore (+65)</option><option value="+60">Malaysia (+60)</option><option value="+81">Japan (+81)</option><option value="+82">South Korea (+82)</option><option value="+974">Qatar (+974)</option><option value="+966">Saudi Arabia (+966)</option>
             </select>
           </div>
-          <div class="field">
-            <label for="phone">Mobile number</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Enter mobile number" required aria-describedby="phoneHelp">
-          </div>
+          <div class="field"><label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="Enter mobile number" required aria-describedby="phoneHelp"></div>
         </div>
         <div class="consent">
           <input id="consent" name="consent" type="checkbox" required>
-          <label for="consent">I agree to receive one-time authentication codes from LAJEMBO by SMS. Message and data rates may apply. This consent is for authentication and account access only and is not consent to marketing or promotional messages. See our <a href="../privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="../terms-and-conditions/" target="_blank" rel="noopener">Terms & Conditions</a>.</label>
+          <label for="consent">I agree to receive one-time authentication text messages from LAJEMBO for registration, login, identity verification, and account access. Message frequency varies based on verification requests; typically one message is sent per request, with additional messages only when another code is requested. Message and data rates may apply. Reply STOP to opt out or HELP for help. This consent is not for marketing or promotional messages. See our <a href="../privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="../terms-and-conditions/" target="_blank" rel="noopener">Terms & Conditions</a>.</label>
         </div>
         <button id="sendButton" class="submit" type="submit" disabled>Send six-digit code</button>
         <div id="status" class="status" role="status" aria-live="polite"></div>
-        <p id="phoneHelp" class="fineprint">Codes expire in 10 minutes. Requests are rate-limited for your protection. LAJEMBO does not use this campaign for marketing or promotional messaging.</p>
+        <p id="phoneHelp" class="fineprint">Codes expire in 10 minutes. Message frequency varies based on your verification requests. Message and data rates may apply. Reply STOP to opt out or HELP for help. LAJEMBO does not use this campaign for marketing or promotional messaging.</p>
       </form>
     </div>
-    <div class="card notice">
-      <h2>How consent works</h2>
-      <p>The user enters their own mobile number, actively checks the SMS consent box, and then presses “Send six-digit code.” LAJEMBO sends the one-time passcode only after this user-initiated request.</p>
-    </div>
+    <div class="card notice"><h2>How consent works</h2><p>The user enters their own mobile number, actively checks the SMS consent box, and then presses “Send six-digit code.” LAJEMBO sends a one-time authentication code only after this user-initiated request. Message frequency varies based on verification requests; typically one message is sent per request. Users can reply STOP to opt out or HELP for help.</p></div>
   </section>
 </main>
 <footer><div class="footer-inner"><div>© 2026 LAJEMBO. All rights reserved.</div><div><a href="../privacy-policy/">Privacy Policy</a> · <a href="../terms-and-conditions/">Terms & Conditions</a></div></div></footer>
@@ -94,42 +54,9 @@
 (function(){
   const SUPABASE_URL='https://wtfyzrqocnmmdgqthhli.supabase.co';
   const SUPABASE_KEY='sb_publishable_AjHIkbKFgbcRho8qu3w96g_KL5rWIHr';
-  const form=document.getElementById('otpForm');
-  const consent=document.getElementById('consent');
-  const phone=document.getElementById('phone');
-  const countryCode=document.getElementById('countryCode');
-  const button=document.getElementById('sendButton');
-  const status=document.getElementById('status');
+  const form=document.getElementById('otpForm'),consent=document.getElementById('consent'),phone=document.getElementById('phone'),countryCode=document.getElementById('countryCode'),button=document.getElementById('sendButton'),status=document.getElementById('status');
   consent.addEventListener('change',()=>{button.disabled=!consent.checked;});
-  form.addEventListener('submit',async(e)=>{
-    e.preventDefault();
-    status.className='status'; status.textContent='';
-    if(!consent.checked){status.className='status err';status.textContent='Please provide SMS consent before requesting a verification code.';return;}
-    const raw=phone.value.replace(/\D/g,'');
-    if(!raw){status.className='status err';status.textContent='Enter a valid mobile number.';return;}
-    const e164=countryCode.value+raw.replace(/^0+/,'');
-    button.disabled=true; button.textContent='Sending code…';
-    try{
-      const res=await fetch(SUPABASE_URL+'/auth/v1/otp',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},
-        body:JSON.stringify({phone:e164,create_user:true})
-      });
-      if(!res.ok){
-        let message='Unable to send a verification code right now. Please try again shortly.';
-        try{const data=await res.json(); if(data && (data.msg||data.message)) message=data.msg||data.message;}catch(_){ }
-        throw new Error(message);
-      }
-      status.className='status ok';
-      status.textContent='Verification code requested successfully. Check your phone for the LAJEMBO six-digit code.';
-    }catch(err){
-      status.className='status err';
-      status.textContent=err && err.message ? err.message : 'Unable to send a verification code right now. Please try again shortly.';
-    }finally{
-      button.textContent='Send six-digit code';
-      button.disabled=!consent.checked;
-    }
-  });
+  form.addEventListener('submit',async(e)=>{e.preventDefault();status.className='status';status.textContent='';if(!consent.checked){status.className='status err';status.textContent='Please provide SMS consent before requesting a verification code.';return;}const raw=phone.value.replace(/\D/g,'');if(!raw){status.className='status err';status.textContent='Enter a valid mobile number.';return;}const e164=countryCode.value+raw.replace(/^0+/,'');button.disabled=true;button.textContent='Sending code…';try{const res=await fetch(SUPABASE_URL+'/auth/v1/otp',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY},body:JSON.stringify({phone:e164,create_user:true})});if(!res.ok){let message='Unable to send a verification code right now. Please try again shortly.';try{const data=await res.json();if(data&&(data.msg||data.message))message=data.msg||data.message;}catch(_){}throw new Error(message);}status.className='status ok';status.textContent='Verification code requested successfully. Check your phone for the LAJEMBO six-digit code.';}catch(err){status.className='status err';status.textContent=err&&err.message?err.message:'Unable to send a verification code right now. Please try again shortly.';}finally{button.textContent='Send six-digit code';button.disabled=!consent.checked;}});
 })();
 </script>
 </body>
