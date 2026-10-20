@@ -7,14 +7,14 @@
   <meta name="description" content="Live LAJEMBO SMS opt-in and one-time verification code request page for authentication and account access.">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .verification-wrap{max-width:680px;margin:0 auto}.form-grid{display:grid;grid-template-columns:190px 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.field label{font-weight:700;color:var(--navy)}.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:16px}.consent{display:flex;align-items:flex-start;gap:11px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fffaf3;margin:8px 0 16px}.consent input{margin-top:5px;transform:scale(1.15)}.consent label{font-size:14px;color:var(--ink)}.consent a{color:var(--navy)}.submit{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;padding:13px 16px;border-radius:8px;font-size:16px;font-weight:700}.submit:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:16px;padding:13px 14px;border-radius:8px;font-size:14px}.status.ok{display:block;background:#edf8f0;border:1px solid #b8dec0;color:#194d28}.status.err{display:block;background:#fff1f1;border:1px solid #e7b9b9;color:#7a1f1f}.fineprint{font-size:13px;color:var(--muted);margin-top:12px}.live-badge{display:inline-block;background:#edf8f0;color:#194d28;border:1px solid #b8dec0;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;margin-bottom:8px}@media(max-width:620px){.form-grid{grid-template-columns:1fr}}
+    .verification-wrap{max-width:680px;margin:0 auto}.form-grid{display:grid;grid-template-columns:190px 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}.field label{font-weight:700;color:var(--navy)}.field input,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font-size:16px}.consent{display:flex;align-items:flex-start;gap:11px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fffaf3;margin:8px 0 16px}.consent input{margin-top:5px;transform:scale(1.15)}.consent label{font-size:14px;color:var(--ink)}.consent a{color:var(--navy)}.submit{width:100%;border:0;cursor:pointer;background:var(--navy);color:#fff;padding:13px 16px;border-radius:8px;font-size:16px;font-weight:700}.submit:disabled{opacity:.5;cursor:not-allowed}.status{display:none;margin-top:16px;padding:13px 14px;border-radius:8px;font-size:14px}.status.ok{display:block;background:#edf8f0;border:1px solid #b8dec0;color:#194d28}.status.err{display:block;background:#fff1f1;border:1px solid #e7b9b9;color:#7a1f1f}.fineprint{font-size:13px;color:var(--muted);margin-top:12px}.live-badge{display:inline-block;background:#edf8f0;color:#194d28;border:1px solid #b8dec0;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;margin-bottom:8px}.site-nav{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex-wrap:wrap}.site-nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:700}.site-nav a:hover{text-decoration:underline}.back-link{display:inline-block;margin-top:14px;color:var(--navy);font-weight:700;text-decoration:none}.back-link:hover{text-decoration:underline}@media(max-width:900px){.top-inner{align-items:flex-start;flex-direction:column}.site-nav{justify-content:flex-start}}@media(max-width:620px){.form-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <header class="top">
   <div class="top-inner">
-    <a class="brand-logo-link" href="../" aria-label="LAJEMBO Legal Home"><img class="brand-logo" src="../4BFE8BF3-05BF-4979-A7D0-70F38C8C902B.PNG" alt="LAJEMBO — Find Home With Confidence"></a>
-    <nav class="nav"><a href="../privacy-policy/">Privacy Policy</a><a href="../terms-and-conditions/">Terms & Conditions</a></nav>
+    <a class="brand-logo-link" href="https://lajembo.github.io/website/" aria-label="LAJEMBO Home"><img class="brand-logo" src="../4BFE8BF3-05BF-4979-A7D0-70F38C8C902B.PNG" alt="LAJEMBO — Find Home With Confidence"></a>
+    <nav class="site-nav" aria-label="LAJEMBO navigation"><a href="https://lajembo.github.io/website/">Home</a><a href="https://lajembo.github.io/website/rentals.html">Rentals</a><a href="https://lajembo.github.io/website/list-property.html">Property Letting</a><a href="https://lajembo.github.io/website/#property-manager">Property Management</a><a href="https://lajembo.github.io/website/exclusive.html">LAJEMBO Exclusive</a><a href="https://lajembo.github.io/website/how-it-works.html">How LAJEMBO Works</a><a href="https://lajembo.github.io/website/#trust">Safety &amp; Verification</a><a href="https://lajembo.github.io/website/help-support.html">Help &amp; Support</a><a href="../privacy-policy/">Privacy &amp; Data</a><a href="../terms-and-conditions/">Terms</a></nav>
   </div>
 </header>
 <main>
@@ -23,6 +23,7 @@
     <span class="live-badge">Live SMS verification</span>
     <h1>Verify your number</h1>
     <p>Enter your mobile number and request a one-time six-digit verification code for LAJEMBO registration, login, identity verification, or account access.</p>
+    <a class="back-link" href="https://lajembo.github.io/website/">← Back to LAJEMBO Home</a>
   </section>
   <section class="content verification-wrap">
     <div class="card">
@@ -49,7 +50,7 @@
     <div class="card notice"><h2>How consent works</h2><p>The user enters their own mobile number, actively checks the SMS consent box, and then presses “Send six-digit code.” LAJEMBO sends a one-time authentication code only after this user-initiated request. Message frequency varies based on verification requests; typically one message is sent per request. Users can reply STOP to opt out or HELP for help.</p></div>
   </section>
 </main>
-<footer><div class="footer-inner"><div>© 2026 LAJEMBO. All rights reserved.</div><div><a href="../privacy-policy/">Privacy Policy</a> · <a href="../terms-and-conditions/">Terms & Conditions</a></div></div></footer>
+<footer><div class="footer-inner"><div>© 2026 LAJEMBO. All rights reserved.</div><div><a href="https://lajembo.github.io/website/">Home</a> · <a href="../privacy-policy/">Privacy &amp; Data</a> · <a href="../terms-and-conditions/">Terms</a> · <a href="https://lajembo.github.io/website/help-support.html">Help &amp; Support</a></div></div></footer>
 <script>
 (function(){
   const SUPABASE_URL='https://wtfyzrqocnmmdgqthhli.supabase.co';
