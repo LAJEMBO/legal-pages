@@ -56,7 +56,7 @@
   const menuButton=document.getElementById('menuButton'),mobileMenu=document.getElementById('mobileMenu');if(menuButton&&mobileMenu){menuButton.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));});mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuButton.setAttribute('aria-expanded','false');}));}
   const SUPABASE_URL='https://wtfyzrqocnmmdgqthhli.supabase.co';
   const SUPABASE_KEY='sb_publishable_AjHIkbKFgbcRho8qu3w96g_KL5rWIHr';
-  const params=new URLSearchParams(location.search);const requestedIntent=params.get('intent');const journeyIntent=['renter','provider','management'].includes(requestedIntent)?requestedIntent:'';
+  const params=new URLSearchParams(location.search);const requestedIntent=params.get('intent');const journeyIntent=['renter','provider','management','exclusive'].includes(requestedIntent)?requestedIntent:'';
   const form=document.getElementById('otpForm'),consent=document.getElementById('consent'),phone=document.getElementById('phone'),countryCode=document.getElementById('countryCode'),button=document.getElementById('sendButton'),status=document.getElementById('status'),verifyStep=document.getElementById('verifyStep'),otpCode=document.getElementById('otpCode'),verifyButton=document.getElementById('verifyButton'),verifyStatus=document.getElementById('verifyStatus');
   let pendingPhone='';
   consent.addEventListener('change',()=>{button.disabled=!consent.checked;});
